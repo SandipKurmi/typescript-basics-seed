@@ -266,16 +266,16 @@
 
 //optinal Paramitar 
 
-let getTotalQuntity : (numOfPizza : number , quentity?:number) => number;
+// let getTotalQuntity : (numOfPizza : number , quentity?:number) => number;
 
-getTotalQuntity = (x,y) => {
-    if(y){
-        return x * y
-    }
-    return x 
-}
+// getTotalQuntity = (x,y) => {
+//     if(y){
+//         return x * y
+//     }
+//     return x 
+// }
 
-console.log(getTotalQuntity(25,2));
+// console.log(getTotalQuntity(25,2));
 
 
 
