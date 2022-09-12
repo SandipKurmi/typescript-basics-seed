@@ -247,7 +247,7 @@
 // console.log(isLodding)
 
 
-//lession 21
+//lesson 21
 //function 
 // let sumQuantity : (num:number , quentity: number) => number;
 
@@ -263,19 +263,193 @@
 
 // console.log(userName('sandip', 'kurmi'))
 
-
+//lesson 22
 //optinal Paramitar 
 
-let getTotalQuntity : (numOfPizza : number , quentity?:number) => number;
+// let getTotalQuntity : (numOfPizza : number , quentity?:number) => number;
 
-getTotalQuntity = (x,y) => {
-    if(y){
-        return x * y
-    }
-    return x 
-}
+// getTotalQuntity = (x,y) => {
+//     if(y){
+//         return x * y
+//     }
+//     return x 
+// }
 
-console.log(getTotalQuntity(25,2));
+// console.log(getTotalQuntity(25,2));
+
+//optinal paramitar in new way
+
+// let getTotalQuntity : (priceOfPizza: number , quentity?:number) => number;
+
+// getTotalQuntity = (x , y = 1) => { 
+//     return x * y
+// }
+
+// console.log(getTotalQuntity(25));
+
+// example 3 
+
+// let totalSum : (sum1:number, sum2?:number, sum3?:number) => number;
+
+// totalSum = (a , b = 0 , c = 0) => {
+//     return a + b + c 
+// }
+
+// console.log(totalSum(25))
+
+//lesson 24
+
+// const pizza : {name : string , price : number , getPizza() : string} = {
+//     name : "megirata",
+//     price: 240,
+//     getPizza() {
+//         return pizza.name
+//     },
+// }
+
+// console.log(pizza.getPizza());
+
+// console.log(pizza)
+
+//lesson 25
+
+// const pizza : number[] = [1,2,3];
+
+// console.log(pizza);
+
+// const pizza2 : string[] = ['vegPizza', 'nonvegPizza',]
+// console.log(pizza2);
+
+
+//genric type require one type of arguments
+// let drinks: Array<string>;
+
+// drinks = ['cock', 'pepsi' ]
+
+// console.log(drinks);
+
+
+//lesson 26
+//tupal type more strice array
+//by this we can add other data types in array
+
+// let drinks : [string, number , boolean];
+
+// drinks = ['sandip', 23 , true]
+
+
+// console.log(drinks);
+
+
+//lesson 27 type aliase  for type checking
+
+// let pizzaSize : 'small' | 'large' | 'medium'
+
+// type size = 'large' | 'medium' | 'small';
+
+// let pizzaSize : size = 'small';
+
+// const getPizzaSize = (size : size): void => {
+//     pizzaSize = size
+// }
+
+// console.log(pizzaSize);
+
+// getPizzaSize('medium')
+
+
+// console.log(pizzaSize);
+
+
+// example 2
+
+// type size = 'large' | 'medium' | 'small';
+// type Callback = (size : size) =>  void ;
+
+// let pizzaSize : size = 'small';
+
+// const getPizzaSize : Callback= (x) => {
+//     pizzaSize = x
+// }
+
+// console.log(pizzaSize);
+
+// getPizzaSize('medium')
+
+
+// console.log(pizzaSize);
+
+
+//example 3
+// type colors = 'red' | 'green' | 'blue'
+
+
+// type Callback = (colors : colors) => string
+
+// const getShirtColor: Callback = (x) => {
+//     return x
+// }
+
+// console.log(getShirtColor('red'))
+
+//lesson 28 
+
+// type pizza = {name: string, price : 150}
+
+// const pizza : pizza = {name : "migirata" , price : 150}
+
+// const serlised = JSON.stringify(pizza)
+
+// function getNameFromJson (obj : string) {
+//     return (JSON.parse(obj) as pizza).price
+// }
+
+// console.log(getNameFromJson(serlised))
+// console.log(serlised);
+// console.log(pizza);
+
+//lesson 29 enum basicly is the data type
+//by default we are gating numeric value from enum
+
+
+// enum Sizes {
+//     'small',
+//     'medium',
+//     'large',
+// }
+
+// enum Sizes {
+//     "ractingle" = 3
+// }
+
+// const pizzaSize  = 3
+
+// console.log(Sizes.ractingle)
+// console.log(Sizes[pizzaSize])
+
+//lesson 30
+//we can write without const or not we can write in object as well
+
+// const enum Sizes {
+//    small = 'small',
+//    medium = 'medium',
+//    large = 'large'
+// }
+
+// let selected: Sizes = Sizes.large
+
+// const getSelectedSizes = (size : Sizes)  => {
+//     selected = size 
+// }
+
+// getSelectedSizes(Sizes.medium)
+
+// console.log(selected)
+
+
+//interfaces
+
+
 
 
 
