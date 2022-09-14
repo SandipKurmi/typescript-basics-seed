@@ -1,42 +1,57 @@
-// const pizzas = [{name: 'Pepperoni', toppings: ['Pepperoni']}]
+// const pizzas = [{name: 'Pepperoni',price: 250, toppings: ['Pepperoni']}]
 
-// const mappedPizza = pizzas.map((pizza) => pizza.name.toUpperCase()  )
+// const mappedPizza = pizzas.map((pizza) => pizza.name.toUpperCase())
 
 // console.log(mappedPizza)
 
 // const pizza = {
 //     name: 'Blazing Inferno',
+//     price: 280/100 ,
+//     getPrice: function() {
+//         return this.price
+//     },
 //     getName: function () {
 //         return this.name
 //     }
 // }
 
 // console.log(pizza.getName())
+// console.log(pizza.getPrice());
 
 //lesson 7
 // const multiply = (a:any , b:any) => a * b;
 // console.log(multiply(2, 24))
 
+// const reminder = (x:number, y:number): number => x % y;
+// console.log(reminder(10,5));
+
+ 
 //lesson 8
 // const pizza = {
 //     name: 'megirata pizza',
 //     price: 150,
+//     getprice () {
+//         return this.price + 50
+//     },
 //     getname () {
 //         return this.name
 //     }
 // }
 
 // console.log(pizza.getname())
+// console.log(pizza.getprice())
+
 
 // const toppings = ['Pepperoni']
 
 // const order = {
+//     toppings,
 //     pizza,
-//     toppings
 // }
 
+// console.log(order);
 // const order = (pizza: any, toppings:any) => {
-//     return {pizza, toppings}
+//     return {toppings, pizza}
 // }
 
 // console.log(order(pizza, toppings))
@@ -45,12 +60,12 @@
 //lession 9
 //rest parametar
 
-// const totalNumber = (message:any, ...arr:any) => {
+// const totalNumber = (message:string, ...arr:number[]) => {
 //     console.log(message)
-//     return arr.reduce((prev:any, next:any) => prev + next, 0)
+//     return arr.reduce((prev:number, next:number) => prev + next, 0)
 // }
 
-// const sum = totalNumber('sandip', 1,2,3,4,5,6,7,8,9,10)
+// const sum = totalNumber('good morning', 1,2,3,4,5,6,7,8,9,10)
 
 // console.log(sum)
 
@@ -83,32 +98,36 @@
 
 // const pizza = {
 //     name: 'Pepperoni',
+//     price: 256 / 2,
 //     toppings: ['pepperoni']
 // }
 
 // const order = (pizza:any) => {
-//     const {name:pizzaName, toppings: pizzaToppings} = pizza
-//     return {pizzaName, pizzaToppings}
+//     const {name:pizzaName, toppings: pizzaToppings, price: pizzaPrice} = pizza
+//     return {pizzaName, pizzaToppings, pizzaPrice}
 
 // }
 
-// const {pizzaName,pizzaToppings } = order(pizza)
+// const {pizzaName,pizzaToppings , pizzaPrice} = order(pizza)
 
 // console.log(pizzaName)
 // console.log(pizzaToppings);
+// console.log(pizzaPrice);
 
 
-// const fruites = ['Apple', 'Mango', 'Guava']
+// const fruites : string[]= ['Apple', 'Mango', 'Guava', 'Three']
 
-// const [fru1, fru2, fru3] = fruites
+// const [fru1, fru2, fru3, num1] = fruites
 
-// console.log(fru1, fru2, fru3)
+// console.log(fru1, fru2, fru3, num1)
 
-// const allFruites = ([fru1, fru2, fru3] : any) => [
-//     console.log(fru1 , fru2 , fru3)
-// ]
-
+// const allFruites = ([fru1, fru2, fru3, fru4] : any):string[] => {
+//     return [fru1 , fru2 , fru3, fru4]
+// }
 // const data = allFruites(fruites)
+// console.log(...data);
+
+
 
 //Numbers
 
@@ -120,7 +139,9 @@
 //     return (pizza + getExtra) * pizzaToppings
 // }
 
-// console.log(typeof totalPrice(pizza,pizzaToppings))
+// console.log(totalPrice(pizza,pizzaToppings).toFixed(2))
+
+
 
 //Strings
 
@@ -135,26 +156,31 @@
 
 //lession 14 boolean
 
-// const order :number = 2
+// const order :number = 5
 
 // const offer = (order:number): boolean => {
 //     return order > 3;
 // }
 
 // if(offer(order)){
-//     console.log(`you ${order} order is vailed for coupon`)
+//     console.log(`your ${order} order is vailed for coupon`)
 // }else {
-//     console.log(`you ${order} is less then 3 so you copon is not valed`)
+//     console.log(`your ${order} is less then 3 so your copon is not valed`)
 // }
 
 
-//lesson 15 any
+//lesson 15 any we can asign any datatype to any 
 
 // let copon :any ;
+// console.log(copon);
 // copon = 15
-// copon = 'copone15'
-// copon = true
+// console.log(copon);
 
+// copon = 'copone15'
+// console.log(copon);
+
+// copon = true
+// console.log(copon);
 
 //lesson 16 impliset , explisit
 
@@ -194,7 +220,7 @@
 //null or undefined
 //turn of tsconfig strict mode 
 
-// let copon:string = 'copon25'
+// let copon:any = 'copon25'
 
 // const removeCopone = ():void => {
 //     copon = undefined
@@ -213,12 +239,11 @@
 //string
 // let pizzaSize: string = 'small'
 
-
 // function funPizzaSize (size : | 'small' | 'large' | 'medium'):void {
 //     pizzaSize = size
 // }
 
-// funPizzaSize('large')
+// funPizzaSize('medium')
 
 // console.log(`the pizza size is ${pizzaSize}`)
 
@@ -226,12 +251,13 @@
 
 // let collageScore : number = 3
 
+// console.log(`The collage score is ${collageScore}`)
+
+
 // function getScore (score : 100 | 200 | 300 | 400){
 //     collageScore = score
 // }
-
 // getScore(300)
-
 
 // console.log(`The collage score is ${collageScore}`)
 
@@ -243,7 +269,7 @@
 //     isLodding = lodding
 // }
 
-// getLodding(true)
+// getLodding(false)
 // console.log(isLodding)
 
 
@@ -257,11 +283,11 @@
 
 //string 
 
-// let userName : (fristName: string, lastName: string) => string;
+// let userName : (fristName: string, lastName: string, age: number) => string;
 
-// userName = (fristName, lastName) => `frist Name is ${fristName} and last name is ${lastName}`
+// userName = (fristName, lastName, age) => `frist Name is ${fristName} and last name is ${lastName} and your age is ${age} `
 
-// console.log(userName('sandip', 'kurmi'))
+// console.log(userName('sandip', 'kurmi', 22))
 
 //lesson 22
 //optinal Paramitar 
@@ -275,7 +301,7 @@
 //     return x 
 // }
 
-// console.log(getTotalQuntity(25,2));
+// console.log(getTotalQuntity(25));
 
 //optinal paramitar in new way
 
@@ -296,6 +322,15 @@
 // }
 
 // console.log(totalSum(25))
+
+// let abilablePizza : (pizza?:string) => string
+
+// abilablePizza = (pizza = 'migirata') => {
+//     return pizza
+// }
+
+// console.log(abilablePizza('oninePizza'));
+
 
 //lesson 24
 
@@ -328,6 +363,12 @@
 
 // console.log(drinks);
 
+// let acpectdPrice : Array<number>
+
+// acpectdPrice = [256,599]
+
+// console.log(acpectdPrice);
+
 
 //lesson 26
 //tupal type more strice array
@@ -337,7 +378,6 @@
 
 // drinks = ['sandip', 23 , true]
 
-
 // console.log(drinks);
 
 
@@ -345,9 +385,9 @@
 
 // let pizzaSize : 'small' | 'large' | 'medium'
 
-// type size = 'large' | 'medium' | 'small';
+// type size = 'large' | 'medium' | 'small' | 'thin';
 
-// let pizzaSize : size = 'small';
+// let pizzaSize : size = 'thin';
 
 // const getPizzaSize = (size : size): void => {
 //     pizzaSize = size
@@ -355,7 +395,7 @@
 
 // console.log(pizzaSize);
 
-// getPizzaSize('medium')
+// getPizzaSize(pizzaSize)
 
 
 // console.log(pizzaSize);
@@ -379,7 +419,6 @@
 
 // console.log(pizzaSize);
 
-
 //example 3
 // type colors = 'red' | 'green' | 'blue'
 
@@ -392,6 +431,22 @@
 
 // console.log(getShirtColor('red'))
 
+//example 4
+// type salery = 25000 | 30000 | 40000
+
+// type Callback = (salery : salery) => void
+
+// let employeSalery: salery = 25000
+
+// const getSaliry : Callback = (salery) => {
+//      employeSalery = salery
+// }
+
+// getSaliry(40000)
+
+
+// console.log(employeSalery);
+
 //lesson 28 
 
 // type pizza = {name: string, price : 150}
@@ -401,11 +456,12 @@
 // const serlised = JSON.stringify(pizza)
 
 // function getNameFromJson (obj : string) {
-//     return (JSON.parse(obj) as pizza).price
+//     const objPizza = JSON.parse(obj)
+//     console.log(objPizza);
+//     return (objPizza as pizza).price
 // }
 
 // console.log(getNameFromJson(serlised))
-// console.log(serlised);
 // console.log(pizza);
 
 //lesson 29 enum basicly is the data type
@@ -422,12 +478,20 @@
 //     "ractingle" = 3
 // }
 
+// enum  Sizes {
+//     'circle' = 4
+// }
+
 // const pizzaSize  = 3
 
 // console.log(Sizes.ractingle)
 // console.log(Sizes[pizzaSize])
 
-//lesson 30
+// console.log(Sizes[0]);
+// console.log(Sizes[4]);
+
+
+//lesson 30 to 35
 //we can write without const or not we can write in object as well
 
 // const enum Sizes {
@@ -435,8 +499,12 @@
 //    medium = 'medium',
 //    large = 'large'
 // }
+// console.log(Sizes.medium);
+
+
 
 // let selected: Sizes = Sizes.large
+// console.log(selected);
 
 // const getSelectedSizes = (size : Sizes)  => {
 //     selected = size 
@@ -448,3 +516,103 @@
 
 
 //interfaces
+//interFace is contract bitween datatype and varibles
+//by extends we can inharrite propity of interfaces
+// by [?] we can define optinal type in interface
+// interface Sizes {
+//     size : string[],
+// }
+
+// interface PizzaMethods {
+//     getPrice() : number[],
+//     getSize() : string[]
+// }
+
+// interface Pizza extends Sizes, PizzaMethods{
+//     name : string,
+//     quentity: number,
+//     noOfToppings?: number,
+//     price: number[],
+//     [kye: number] : string
+// }
+
+// let pizza : Pizza;
+
+// const getPizza = (name:string,quentity:number,noOfToppings:number , price: number[], size: string[], ): Pizza => {
+//     return {
+//         name,
+//         quentity,
+//         price,
+//         size,
+//         noOfToppings,
+//         getPrice() {
+//             return this.price
+//         },
+//         getSize () {
+//             return this.size
+//         }
+//     }
+// }
+
+
+// pizza = getPizza('migirata',256, 26, [200,300,400], ['large', 'small', 'medium'],)
+
+
+// console.log(pizza);
+// console.log(pizza.getPrice().reduce((prev, next) => prev + next , 0));
+// console.log(pizza.getPrice().filter((price) => price !== 300));
+// console.log(pizza.getPrice().map((price) => price + 20));
+// console.log(pizza.getPrice().every((price) => price > 500));
+// console.log(pizza.getPrice().some((price) => price === 400));
+// console.log(pizza.getSize().filter((size) => size.startsWith('s')))
+
+//lessone 36, 37
+//classes and publice and privet
+// class Pizza {
+//     name: string;
+//     price: number = 500;
+//     toppings: string[] = [];
+
+//     constructor ( name: string) {
+//         this.name = name;
+//     }
+
+//     addTopping(topping: string) {
+//         this.toppings.push(topping)
+//     }
+
+//    private getPrice(){
+//         this.name  = 'ram'
+//     }
+// }
+
+// let pizza = new Pizza('pepperoni')
+
+
+// pizza.addTopping('pepperoni')
+// console.log(pizza);
+
+//38 read only property 
+//note : we can only assign read only property only top of the declaration
+
+// class Pizza {
+//     price: number = 500;
+//     toppings: string[] = [];
+
+//     constructor (readonly name: string) {}
+
+//     addTopping(topping: string) {
+//         this.toppings.push(topping)
+//     }
+// }
+
+// let pizza = new Pizza('Pepperoni')
+
+
+// pizza.addTopping('pepperoni')
+// console.log(pizza.name);
+
+
+
+
+
