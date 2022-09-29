@@ -570,7 +570,7 @@
 //classes and publice and privet
 // class Pizza {
 //     name: string;
-//     price: number = 500;
+//     price: number = 0;
 //     toppings: string[] = [];
 
 //     constructor ( name: string) {
@@ -581,8 +581,8 @@
 //         this.toppings.push(topping)
 //     }
 
-//    private getPrice(){
-//         this.name  = 'ram'
+//     getPrice(price: number){
+//         this.price  = price
 //     }
 // }
 
@@ -590,6 +590,8 @@
 
 
 // pizza.addTopping('pepperoni')
+// pizza.getPrice(230)
+
 // console.log(pizza);
 
 //38 read only property 
@@ -613,6 +615,267 @@
 // console.log(pizza.name);
 
 
+//39 gaters and seters
+//seters and getrs allways public
+
+// class Sizes {
+//     constructor(public sizes: string[]){}
+
+//     set availableSizes(sizes: string[]){
+//         this.sizes = sizes;
+//     }
+
+//     get availableSizes() {
+//         return this.sizes
+//     }
+// }
+
+// const size = new Sizes(['small' , 'medium'])
+
+// //invoke getter
+// console.log(size.availableSizes)
+
+// //invoke setter
+// size.availableSizes = ['medium', 'large']
+
+// console.log(size.availableSizes)
 
 
+//example 2
+
+// class Names {
+//     constructor(public names: string[]){}
+
+//     set availableName(names: string[]){
+//         this.names = names;
+//     }
+
+//     get availableName() {
+//         return this.names
+//     }
+// }
+
+// const names = new Names(['sandip', 'shiva'])
+
+// console.log(names.availableName)
+
+// names.availableName = ['dhruv', 'ashirvad']
+
+// console.log(names.availableName)
+
+// names.availableName = ['rakesh', 'varma']
+
+// console.log(names.availableName)
+
+//40  
+
+//by extend keyword we inharit classes
+//leke this we create inheritence and 
+
+// class Sizes {
+//     constructor(public sizes: string[]){}
+
+//     set availableSizes(sizes: string[]){
+//         this.sizes = sizes;
+//     }
+
+//     get availableSizes() {
+//         return this.sizes
+//     }
+// }
+
+
+
+// class Pizza extends Sizes {
+//     price: number = 500;
+//     toppings: string[] = [];
+
+//     constructor (readonly name: string, public sizes: string[]) {
+//         super(sizes)
+//     }
+
+//     addTopping(topping: string) {
+//         this.toppings.push(topping)
+//     }
+// }
+
+// let pizza = new Pizza('Pepperoni', ['small', 'medium'])
+
+// console.log(pizza.availableSizes)
+// pizza.addTopping('pepperoni')
+// console.log(pizza)
+
+// console.log(pizza.name);
+
+
+//41 abstract class we can not inteneted we can not invoke it's own we can only extend in down the class
+
+//we can also export abstract classes
+//by abstract key word we can make classes abstract
+
+//  abstract class Sizes {
+//     constructor(public sizes: string[]){}
+
+//     set availableSizes(sizes: string[]){
+//         this.sizes = sizes;
+//     }
+
+//     get availableSizes() {
+//         return this.sizes
+//     }
+// }
+
+
+// class Pizza extends Sizes {
+//     price: number = 500;
+//     toppings: string[] = [];
+
+//     constructor (readonly name: string, public sizes: string[]) {
+//         super(sizes)
+//     }
+
+//     addTopping(topping: string) {
+//         this.toppings.push(topping)
+//     }
+// }
+
+// let pizza = new Pizza('Pepperoni', ['small', 'medium'])
+
+// console.log(pizza.availableSizes)
+// pizza.addTopping('pepperoni')
+// console.log(pizza)
+
+// console.log(pizza.name);
+
+
+// 42  protected maintain private behaviar and access in extended class also
+// abstract class Sizes {
+//     constructor(protected sizes: string[]){}
+
+//     set availableSizes(sizes: string[]){
+//         this.sizes = sizes;
+//     }
+
+//     get availableSizes() {
+//         return this.sizes
+//     }
+// }
+
+
+// class Pizza extends Sizes {
+//     price: number = 500;
+//     toppings: string[] = [];
+
+
+//     constructor (readonly name: string, sizes: string[]) {
+//         super(sizes)
+//     }
+
+//     public updateSizes(sizes: string[]){
+//         this.sizes = sizes
+//     }
+
+//     addTopping(topping: string) {
+//         this.toppings.push(topping)
+//     }
+// }
+
+// let pizza = new Pizza('Pepperoni', ['small', 'medium'])
+
+// pizza.addTopping('pepperoni')
+// console.log(pizza.availableSizes)
+// pizza.updateSizes(['mega large'])
+// console.log(pizza.availableSizes)
+
+// console.log(pizza.name);
+
+
+//43 implement keyword for adding interface
+// interface SizesInterface {
+//     // sizes: string[]; if we use public we can use nicele
+//     availableSizes: string[]
+// }
+
+
+// abstract class Sizes implements SizesInterface {
+//     constructor(protected sizes: string[]){}
+
+//     set availableSizes(sizes: string[]){
+//         this.sizes = sizes;
+//     }
+
+//     get availableSizes() {
+//         return this.sizes
+//     }
+// }
+
+// interface PizzaInterface extends SizesInterface {
+//     readonly name: string;
+//     toppings: string[];
+//     updateSizes(sizes: string[]): void;
+//     addTopping(topping: string): void
+// }
+
+
+// class Pizza extends Sizes implements PizzaInterface {
+//     price: number = 500;
+//     toppings: string[] = [];
+
+
+//     constructor (readonly name: string, sizes: string[]) {
+//         super(sizes)
+//     }
+
+//     public updateSizes(sizes: string[]){
+//         this.sizes = sizes;
+//     }
+
+//     addTopping(topping: string) {
+//         this.toppings.push(topping)
+//     }
+// }
+
+// let pizza = new Pizza('Pepperoni', ['small','medium'])
+
+// pizza.addTopping('pepperoni')
+// console.log(pizza.availableSizes)
+// pizza.updateSizes(['mega large'])
+// console.log(pizza.availableSizes)
+
+// console.log(pizza.name);
+
+
+
+// 44 static
+
+//we can create some static classes without creating any instance
+// class Coupon {
+//     static allowed = ['pepperoni', 'Blazing Inferno'];
+//     static create(percentage: number){
+//         return `PIZZA_RESTAURANT_${percentage}`
+//     }
+// }
+
+// console.log(Coupon.create(25));
+
+// console.log(Date.now())
+
+// const data = new Date()
+// console.log(data)
+
+
+//45 genric is create some form of dynimic type
+//we can create reusable component and function
+
+// class List {
+//     private list: any[];
+
+//     addItem(item: any): void { 
+//         this.list.push(item)
+//     }
+
+//     getList(): any[]{
+//         return this.list
+//     }
+// }
 
